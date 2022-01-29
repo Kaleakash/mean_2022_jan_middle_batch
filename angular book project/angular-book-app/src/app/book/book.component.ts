@@ -18,7 +18,7 @@ export class BookComponent implements OnInit {
     imgSrc:new FormControl(),
     price:new FormControl()
   });
-  
+
   constructor(public bookService:BookService) { } // DI for BookService 
 
   ngOnInit(): void {        // it will call once when the component loaded....
@@ -28,5 +28,17 @@ export class BookComponent implements OnInit {
   getAllBooksDetails() : void {
     this.bookService.loadBookDetails().
     subscribe(result=>this.books=result,error=>console.log(error),()=>console.log("done"));
+  }
+
+  storeBookInfo(){
+    let book = this.bookRef.value;
+    //console.log(book);
+    this.bookService.storeBookDetails(book).
+    subscribe(res=>console.log(res),error=>console.log(error),()=>
+      {
+      console.log("finish");
+      this.getAllBooksDetails();
+      });
+      this.bookRef.reset();   // reset the value 
   }
 }

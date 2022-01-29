@@ -14,11 +14,3 @@ exports.getAll = (req, res)=>{
         res.send(books);
     });
 }
-
-exports.storeBook = (req, res)=>{
-    console.log("function called to store the book");
-    // Call repository to get data.
-    let book = req.body;        // get the data from request body
-    console.log(book);
-    res.send("Done")
-}

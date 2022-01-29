@@ -13,8 +13,12 @@ exports.getAll = (cb)=>{
         .catch(err=>{console.log(err)})
 }
 
-
-
-function giveBooks(books){
-    cb(books);
+exports.storeBookInfo = (book)=>{
+    const collection = db.getCollection('Book');
+    collection.insertOne(book).then(res=>console.log("record stored")).
+    catch(err=>console.log(err));
 }
+
+// function giveBooks(books){
+//     cb(books);
+// }

@@ -13,4 +13,7 @@ export class BookService {
   loadBookDetails():Observable<Book[]>{
     return this.http.get<Book[]>("http://localhost:3100/api/book/getAllBooks")
   }
+  storeBookDetails(book:any):Observable<string>{
+    return this.http.post("http://localhost:3100/api/book/storeBook",book,{responseType:'text'});
+  }
 }
