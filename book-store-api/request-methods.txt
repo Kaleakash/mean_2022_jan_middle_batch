@@ -1,0 +1,8 @@
+REST API Request Methods
+(Type of Request).
+
+
+get - Client wants to get something from server.
+post - Client wants to add new data to server.
+put - Client wants to update a resource/data.
+delete - Client wants to delete a resource.

@@ -1,0 +1,16 @@
+
+
+.container{
+    margin-top: 60px;
+}
+
+.border-left{
+    border-left: 1px solid lightgrey;
+    height: 100%;
+}
+
+img{
+    margin-left: 100px;
+    width: 400px;
+    height: 400px;
+}

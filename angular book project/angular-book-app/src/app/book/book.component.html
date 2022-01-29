@@ -1,0 +1,17 @@
+<div>
+    <h2>All Books Details</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Image</th>  
+        </tr>
+        <tr *ngFor="let book of books">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td><img src={{book.imgSrc}} width="200px" height="200px"/></td>
+        </tr>
+    </table>
+</div>

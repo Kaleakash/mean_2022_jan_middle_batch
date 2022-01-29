@@ -1,0 +1,12 @@
+<div class="card" style="width: 14rem;">
+    <img [src]="book.imgSrc" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{book.name}}</h5>
+        <p class="card-text">Author : {{book.author}}</p>
+        <p class="card-text">Price : {{book.price ? book.price : 'Not Available'}}
+            <!-- <ng-container *ngIf="book.price">{{book.price}}</ng-container>
+            <ng-container *ngIf="!book.price">Not Available</ng-container> -->
+        </p>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+</div>
