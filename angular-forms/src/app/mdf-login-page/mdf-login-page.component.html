@@ -1,0 +1,12 @@
+<div>
+    <h2>Login page using Reactive Form</h2>
+    <form [formGroup]="loginRef">
+        <label>UserName</label>
+        <input type="text" formControlName="user"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="pass"/><br/>
+        <input type="button" value="click here" (click)="checkUser()"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <span style="color:red">{{msg}}</span>
+</div>
