@@ -6,7 +6,7 @@ let loginPage = `
                 </head>
                 <body>
                 <h2>Login Page</h2>
-                <form action="checkuser">
+                <form action="checkuser" >
                 <label>UserName</label>
                 <input type="text" name="user"/><br/>
                 <label>Password</label>
@@ -64,7 +64,6 @@ let server = http.createServer((req,res)=> {
                     res.write("<h2>Failure try once again</h2>");    
                 }
             }
-
         }
         res.end();
 })
