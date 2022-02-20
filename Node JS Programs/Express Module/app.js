@@ -71,7 +71,7 @@ app.get("/signUpPageOpen",(req,res)=> {
 app.post("/signUp",(req,res)=> {
     let login = req.body;
     if(loginDetails.length>0){
-        let result = loginDetails.find(ll=>ll.email==login.email);
+        let result = loginDetails.find(obj=>obj.email==login.email);
         if(result==undefined){
             loginDetails.push(login);
             fs.writeFileSync("login.json",JSON.stringify(loginDetails));
