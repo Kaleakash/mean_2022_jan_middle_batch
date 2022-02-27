@@ -1,9 +1,26 @@
 <div>
-    <input type="button" value="load data " (click)="getAllProductDetails()"/>
+    <h2>Add Product Details </h2>
+    <form [formGroup]="productRef" >
+        <label>PId</label>
+        <input type="number" formControlName="pid"/><br/>
+        <label>PName</label>
+        <input type="text" formControlName="pname"/><br/>
+        <label>Price</label>
+        <input type="number" formControlName="price"/><br/>
+        <label>Image URL</label>
+        <input type="url" formControlName="url"/><br/>
+        <input type="button" value="Add Product" (click)="storeProduct()"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <span style="color:red">{{storeMsg}}</span>
+    <hr/>
     <br/>
-    <div *ngFor="let product of products">
+    <div *ngFor="let product of products" style="display: inline-block;">
             <img src={{product.url}} width="200px" height="200px"/>
-            <span>{{product.pname}} {{product.price}}</span>
-            
+            <span>{{product.pname}} {{product.price}}</span><br/>
+            <div style="align-items: center;">
+                <input type="button" value="delete"/>
+                <input type="button" value="update"/>
+            </div>
     </div>
 </div>

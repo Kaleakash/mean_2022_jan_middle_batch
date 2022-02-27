@@ -20,7 +20,7 @@ app.get("/productDetails",(req,res)=> {
 // http://localhost:9090/productStore                       : store the product 
 /*
 {
-"pid":100,
+  "pid":100,
   "pname":"TV",
   "price":85000,
   "url":"https://images.samsung.com/is/image/samsung/in-full-hd-tv-te50fa-ua43te50fakxxl-frontblack-231881877?$720_576_PNG$"
