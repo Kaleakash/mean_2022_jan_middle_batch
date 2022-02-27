@@ -1,16 +1,16 @@
-<div>
+<div class="container">
     <h2>Add Product Details </h2>
-    <form [formGroup]="productRef" >
+    <form [formGroup]="productRef" class="form-group">
         <label>PId</label>
-        <input type="number" formControlName="pid"/><br/>
+        <input type="number" formControlName="pid" class="form-control"/><br/>
         <label>PName</label>
-        <input type="text" formControlName="pname"/><br/>
+        <input type="text" formControlName="pname" class="form-control"/><br/>
         <label>Price</label>
-        <input type="number" formControlName="price"/><br/>
+        <input type="number" formControlName="price" class="form-control"/><br/>
         <label>Image URL</label>
-        <input type="url" formControlName="url"/><br/>
-        <input type="button" value="Add Product" (click)="storeProduct()"/>
-        <input type="reset" value="reset"/>
+        <input type="url" formControlName="url" class="form-control"/><br/>
+        <input type="button" value="Add Product" (click)="storeProduct()" class="btn btn-primary"/>
+        <input type="reset" value="reset" class="btn btn-secondary"/>
     </form>
     <span style="color:red">{{storeMsg}}</span>
     <hr/>
@@ -19,8 +19,26 @@
             <img src={{product.url}} width="200px" height="200px"/>
             <span>{{product.pname}} {{product.price}}</span><br/>
             <div style="align-items: center;">
-                <input type="button" value="delete"/>
-                <input type="button" value="update"/>
+                <input type="button" value="delete" (click)="deleteProduct(product.pid)" class="btn btn-danger"/>
+                <input type="button" value="update" (click)="updateProduct(product)" class="btn btn-success"/>
             </div>
+    </div>
+    <br/>
+    <span style="color:red">{{deleteMsg}}</span>
+    <hr/>
+    <div *ngIf="flag">
+        <h2>Update the record</h2>
+        <form>
+            <label>PId</label>
+            <input type="number" name="pid" [(ngModel)]="pid" readonly/><br/>
+            <label>Price</label>
+            <input type="number" name="price" [(ngModel)]="price"/><br/>
+            <label>Image URL</label>
+            <input type="url" name="url" [(ngModel)]="url"/><br/>
+            <input type="button" value="update record" (click)="updateRecordFromDb()"/>
+            <input type="reset" value="reset"/>
+        </form>
+        <br/>
+        <span style="color:red">{{updateResult}}</span>
     </div>
 </div>

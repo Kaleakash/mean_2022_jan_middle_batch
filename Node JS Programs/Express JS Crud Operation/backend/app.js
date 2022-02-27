@@ -69,9 +69,11 @@ let index = products.findIndex(p=>p.pid==pid);  // if record present it return t
             res.send("Product deleted successfully");            
         }
 })
-// http://localhost:9090/updateProductDetails
-app.patch("/updateProductDetails",(req,res)=> {
+// http://localhost:9090/updateProductInfo
+app.put("/updateProductInfo",(req,res)=> {
+   console.log("I came here")
     let product = req.body;         // update price and url using pid 
+    console.log(product);
     products = JSON.parse(fs.readFileSync("product.json"));
     let index = products.findIndex(p=>p.pid==product.pid);  // if record present it return that product index position else it return -ve number        
         if(index<0){

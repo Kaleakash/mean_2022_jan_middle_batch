@@ -10,7 +10,7 @@ export class ProductService {
 
   constructor(public http:HttpClient) { }   // DI for HttpClient
 
-  
+
   getAllProduct():Observable<Product[]>{
     return this.http.get<Product[]>("http://localhost:9090/productDetails")
   }
@@ -22,4 +22,12 @@ export class ProductService {
     return this.http.post("http://localhost:9090/productStore",product,{responseType:'text'});
   }
 
+
+  deleteProductById(pid:number):Observable<string>{
+    return this.http.delete("http://localhost:9090/deleteProductInfo/"+pid,{responseType:'text'});
+  }
+  
+  updateProduct(product:any):Observable<string>{
+    return this.http.put("http://localhost:9090/updateProductInfo",product,{responseType:"text"});
+  }
 }
