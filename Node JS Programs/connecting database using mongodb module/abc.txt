@@ -1,0 +1,7 @@
+Database connected successfully
+{ _id: 100, name: 'Ravi', age: 21, deptId: 100, city: 'Bangalore' }
+{ _id: 101, name: 'Ajay', age: 22, deptId: 101, city: 'Mumbai' }
+{ _id: 102, name: 'Mahesh', age: 24, deptId: 102, city: 'Bangalore' }
+{ _id: 103, name: 'Rajesh', age: 34, deptId: 100, city: 'Delhi' }
+{ _id: 104, name: 'Dinesh', age: 31, deptId: 101, city: 'Bangalore' }
+{ _id: 105, name: 'Dinesh', age: 31, deptId: 101, city: 'Bangalore' }
