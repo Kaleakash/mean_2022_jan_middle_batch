@@ -5,3 +5,17 @@ exports.findAllProduct = async (req,res)=> {
     res.json(products);
 }
 
+exports.storeProduct = async (req,res)=> {
+    let product = req.body;     // get data from body part of request 
+    try{
+    
+    let result = await productRepository.storeProduct(product);
+        //res.send(result);
+        if(result.acknowledged){
+            res.send("Record stored successfully...")
+        }
+    }catch(Ex){
+        res.send(Ex);
+    }
+}
+

@@ -7,3 +7,6 @@ exports.findAllProduct =  ()=> {
    return dbCollection.getCollection("Product").find().toArray();
 }
 
+exports.storeProduct = (product)=> {
+    return dbCollection.getCollection("Product").insertOne(product);
+}

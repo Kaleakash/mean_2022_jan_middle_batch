@@ -8,7 +8,7 @@ dbConnection.connect();     // connect the database.....
 // http://localhost:9090/api/product
 // http://localhost:9090/api/product/findProduct
 
-app.use(express.json());
+app.use(express.json());    // to enable json data from body part
 
 app.use("/api/product",productRouter);
 //app.use("/api/",productRouter);
