@@ -1,11 +1,12 @@
 let mongoose = require("mongoose");
-mongoose.pluralize(null);   // to avoid to plural
+mongoose.pluralize(null);   // to avoid to plural 
 // define the schema 
 // schema is use to create the structure for the collection 
 let customerSchema = mongoose.Schema({
-    _id:Number,
-    cname:String,
-    cage:Number
+    _id:{type:Number,required:true},
+    cname:{type:String,required:true},
+    cage:{type:Number,required:true},
+    phnumber:{type:Number,required:false}
 });
 
 // using schema we have to create the model 
