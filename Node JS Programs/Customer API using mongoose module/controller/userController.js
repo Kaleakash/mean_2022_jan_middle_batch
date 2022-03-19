@@ -10,7 +10,16 @@ let userRegistration = async (req,res)=> {
     }
 }
 
+let signIn = async (req,res)=> {
+    let user = req.body; 
+    try{
+       let result = await userRepository.signIn(user);
+       //res.send(result); 
+       res.json({"token":result})
+    }catch(Ex){
+        res.send(Ex);
+    }
+}
 
-
-module.exports={userRegistration}
+module.exports={userRegistration,signIn}
 
