@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        let ws = new WebSocket("ws://localhost:9090");
+        // then connection connection open it will call and we will send 
+        // message from browser client to ws server. 
+        ws.onopen = ()=> {
+            ws.send("Hello Server, I am a WS - Client....");
+            sendData = ()=> {
+               let msg = document.getElementById("data").value;
+               ws.send(msg);
+               document.getElementById("data").value="";
+            }
+        }
+        // To receive the message from Server application 
+        ws.onmessage = (obj)=> {
+                // This message display on browser console. 
+                //console.log(obj)// it will display message event 
+                //console.log(obj.data);     // it will display only message 
+                document.getElementById("output").innerHTML = obj.data;
+        }
+    </script>
+</head>
+<body>
+    <h2>Welcome to Simple Web Socket Programming</h2>
+    <div id="output">
+
+    </div>
+    <br/>
+    <input type="text" id="data"/><br/>
+    <input type="button" value="Send Data" onclick="sendData()"/>
+</body>
+</html>
