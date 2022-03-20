@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        let socket = io();
+        //socket.emit("obj","Akash Kale");
+        sendData=()=> {
+            let data = document.getElementById("name").value;
+            socket.emit("obj",data);
+            document.getElementById("name").value="";
+            let pTag = document.createElement("p");
+            let pTagValue = document.createTextNode("From Client "+data);
+            pTag.appendChild(pTagValue);
+            document.getElementById("output").appendChild(pTag);
+        }
+        socket.on("obj1",(msg)=> {
+            let pTag = document.createElement("p");
+            let pTagValue = document.createTextNode(msg);
+            pTag.appendChild(pTagValue);
+            document.getElementById("output").appendChild(pTag);
+        })
+    </script>
+</head>
+<body>
+    <h2>Socket IO Programming....</h2>
+    <div id="output">
+
+    </div>
+    <br/>
+    <input type="text" id="name"/>
+    <input type="submit" value="send Data" onclick="sendData()"/>
+</body>
+</html>

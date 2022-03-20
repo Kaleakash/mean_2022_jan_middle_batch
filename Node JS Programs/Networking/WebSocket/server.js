@@ -14,10 +14,16 @@ app.get("/",(req,res)=> {
 // Server want to recieve web socket reqeust from client 
 app.ws("/",(socket,req)=> {
     console.log("Client connected successfully...");
-
+    /*
+    1st Question : Ans
+    2nd Question : Ans
+    3rd Question : Ans
+    4th Question : Ans
+    
+    */
     // This code is use to receive the message from browser ws client. 
     socket.on("message",(msg)=> {
-        console.log(msg);
+        console.log(msg);       // store this message in database. 
         socket.send("Weleomce Mr/Miss "+msg);
     })
 
