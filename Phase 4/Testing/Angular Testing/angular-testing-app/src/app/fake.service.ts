@@ -17,4 +17,8 @@ export class FakeService {
   getFakeData():Observable<Fake[]> {
     return this.http.get<Fake[]>("https://jsonplaceholder.typicode.com/todos");
   }
+
+  getFakeDataById(id:number):Observable<Fake>{
+    return this.http.get<Fake>("https://jsonplaceholder.typicode.com/todos/"+2);
+  }
 }
