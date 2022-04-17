@@ -2,7 +2,7 @@ var employeeService = require("../src/EmployeeService");
 
 describe("Employee Service testing ",()=> {
 
-
+    var {getEmployeeInfo,passArrayValue,checkUser} = employeeService;    
 
     xit("Employee service fucntion testing ",()=> {
         var result = employeeService.getEmployeeInfo();
@@ -10,6 +10,7 @@ describe("Employee Service testing ",()=> {
     })
 
     it("Employee Service fake for Employee Repository ",()=> {
+        
         spyOn(employeeService,"getEmployeeInfo").and.returnValue("Fake Result");
 
 
@@ -42,7 +43,7 @@ describe("Employee Service testing ",()=> {
         })
 
         
-        var result = employeeService.checkUser("Ajay","1234")
+        var result = checkUser("Ajay","1234")
         expect(result).toBeTruthy();
 
     })
